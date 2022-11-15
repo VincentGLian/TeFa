@@ -1,5 +1,7 @@
-import { CircleButton } from "./Button";
+import { CircleButton, RectButton } from "./Button";
+import { CardV } from "./Card";
+import { CardData } from "./dummy";
 
 export {
-    CircleButton
+    CircleButton, RectButton, CardV, CardData
 }

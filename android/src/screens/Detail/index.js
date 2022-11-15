@@ -1,7 +1,9 @@
-import { View, Text, SafeAreaView, Image, ScrollView, TouchableOpacity, ImageBackground } from 'react-native'
+import { View, Text, SafeAreaView, Image, ScrollView, TouchableOpacity, ImageBackground, FlatList } from 'react-native'
 import React from 'react'
 import { CircleButton } from '../../components/Button'
 import { assets } from '../../assets'
+import { CardData } from '../../components'
+import CardV from '../../components/Card'
 import Feather from 'react-native-vector-icons/Feather'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import styles from './styles'
@@ -98,8 +100,18 @@ const Detail = () => {
                 <Text style={styles.botbgt}>Add to cart</Text>
             </TouchableOpacity>
         </View>
+        <View>
+            <FlatList 
+              data={CardData}
+              renderItem={({ item }) => <CardV data={item} />}
+              keyExtractor={(item) => item.id} 
+              numColumns={2}
+              showsVerticalScrollIndicator={false}
+            />
+        </View>
         
         </ScrollView>
+        
     </SafeAreaView>
   )
 }
