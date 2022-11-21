@@ -2,20 +2,21 @@ import { View, Text, SafeAreaView, Image, ScrollView, TouchableOpacity, ImageBac
 import React from 'react'
 import { CircleButton } from '../../components/Button'
 import { assets } from '../../assets'
-import { CardData } from '../../components'
-import CardV from '../../components/Card'
-import Feather from 'react-native-vector-icons/Feather'
-import Ionicons from 'react-native-vector-icons/Ionicons'
 import styles from './styles'
+import { Example } from '../../components/Rating'
+import { useNavigation } from '@react-navigation/native'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import Feather from 'react-native-vector-icons/Feather'
 
 const Detail = () => {
+    const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
 
         <View style={{ flex:1 }}>
             <ImageBackground source={assets.item1} style={{ height:450 }}>
-                <CircleButton imgUrl={assets.back} left={25} top={30}/>
+                <CircleButton imgUrl={assets.back} left={25} top={30} handlePress={() => navigation.goBack()}/>
                 <TouchableOpacity style={styles.cartb}>
                     <Feather name='shopping-cart' size={25} style={{ alignSelf:'center' }}/>
                     <Text style={styles.cartt}>Cart: 2</Text>
@@ -34,17 +35,13 @@ const Detail = () => {
             <View style={styles.cr}>
                 <Text style={styles.c1}>$20.50</Text>
                 <Text style={styles.c2}>$20.50</Text>
-                <Image source={assets.fullstar} style={styles.r1}/>
-                <Image source={assets.fullstar} style={styles.r2}/>
-                <Image source={assets.fullstar} style={styles.r2}/>
-                <Image source={assets.fullstar} style={styles.r2}/>
-                <Image source={assets.halfstar} style={styles.r3}/>
-                <Text style={styles.rt}>4.9/5</Text>
+                <Example tintColor={'#E9E9E9'} imageSize={28} style={styles.re} startingValue={4.9}/>
+                <Text style={styles.rt} onPress={()=>navigation.navigate("Review")}>4.9/5</Text>
             </View>
         </View>
 
-        <View style={{ backgroundColor:'#304B3B', marginTop:10 }}>
-            <View style={{ flexDirection:'row', margin:25 }}>
+        <View style={styles.v1}>
+            <View style={styles.v2}>
                 <Image source={assets.toko} style={styles.imtk} />
                 <View style={{ marginLeft:20 }}>
                     <Text style={styles.imt}>fitrah shop</Text>
@@ -83,8 +80,8 @@ const Detail = () => {
             </View>
         </View>
 
-        <View style={{ backgroundColor:'white', marginTop:2 }}>
-            <Text style={{ margin:20, marginTop:10 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        <View style={styles.v3}>
+            <Text style={styles.vt}>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
               nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Text>
         </View>
@@ -99,15 +96,6 @@ const Detail = () => {
             <TouchableOpacity style={styles.botbg}>
                 <Text style={styles.botbgt}>Add to cart</Text>
             </TouchableOpacity>
-        </View>
-        <View>
-            <FlatList 
-              data={CardData}
-              renderItem={({ item }) => <CardV data={item} />}
-              keyExtractor={(item) => item.id} 
-              numColumns={2}
-              showsVerticalScrollIndicator={false}
-            />
         </View>
         
         </ScrollView>

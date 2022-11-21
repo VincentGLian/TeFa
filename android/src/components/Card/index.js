@@ -1,8 +1,7 @@
 import { View, Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { SIZES, COLORS, SHADOWS, assets } from '../../assets' 
-import { CircleButton, RectButton } from '../Button'
-import { SubInfo, CardPrice, CardTitle } from '../SubInfo'
+import { SIZES, assets } from '../../assets'
+import { SubInfo, CardTitle } from '../SubInfo'
 import Feather from 'react-native-vector-icons/Feather'
 
 const CardV = ({data}) => {
@@ -14,7 +13,7 @@ const CardV = ({data}) => {
         margin:SIZES.base,
         width:"45%",
      }}>
-        <View style={{ width:"100%", height:250 }}>
+        <View style={{ width:"100%", height:230 }}>
             <Image 
                 source={data.image}
                 resizeMode="cover"
@@ -36,7 +35,7 @@ const CardV = ({data}) => {
                 borderRadius: 3,
                 justifyContent: 'center',
                 height: 30,
-                width: 35,}} onPress={()=>navigation.navigate("Details", {data})}>
+                width: 35,}} onPress={()=>navigation.navigate("Detail", {data})}>
                 <Feather name='shopping-cart' size={25} style={{ alignSelf:'center' }}/>
             </TouchableOpacity>
         </View>

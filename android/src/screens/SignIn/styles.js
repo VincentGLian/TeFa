@@ -52,6 +52,16 @@ export default StyleSheet.create({
     marginTop: 40,
   },
 
+  npass: {
+    padding: 15,
+    width: '90%',
+  },
+
+  righti: {
+    width: 22,
+    height: 22,
+  },
+
   forgot: {
     marginTop: 18,
     marginRight: 50,
@@ -79,6 +89,11 @@ export default StyleSheet.create({
     textAlign: 'center',
     margin: 20,
     color: 'white',
+  },
+
+  vgg: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 
   gg: {

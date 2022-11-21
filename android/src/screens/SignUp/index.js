@@ -5,8 +5,10 @@ import DateTimePicker from '@react-native-community/datetimepicker'
 import { useTogglePasswordVisibility } from '../../components/PasswordTextBox'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import styles from './styles'
+import { useNavigation } from '@react-navigation/native'
 
 const SignUp = () => {
+  const navigation = useNavigation();
   const [text1, onChangeText] = React.useState("");
   const [datePicker, setDatePicker] = useState(false);
   const [date, setDate] = useState(new Date());
@@ -57,14 +59,14 @@ const SignUp = () => {
               <TextInput onChangeText={text => setPassword(text)} value={password} secureTextEntry={passwordVisibility} style={{ padding:15 }}
                 textContentType='newPassword' placeholder="password"/>
               <Pressable onPress={handlePasswordVisibility}>
-                <Image source={rightIcon} style={{ width:22, height:22, marginRight:15 }} />
+                <Image source={rightIcon} style={styles.righti} />
               </Pressable>
             </View>
             
             <CheckBox
               center
               title="I have read and accepted the General Terms and Conditions of this app."
-              containerStyle={{ backgroundColor:'#304B3B', marginLeft:50, marginRight:50 }}
+              containerStyle={styles.checkb}
               textStyle={{ color:'white' }}
               checked={check1}
               onPress={() => setCheck1(!check1)}
@@ -73,7 +75,7 @@ const SignUp = () => {
             <TouchableOpacity style={styles.signb}>
                 <Text style={styles.signt1}>Sign Up</Text>
             </TouchableOpacity>
-            <Text style={styles.signt2}>Sudah memiliki akun? Masuk</Text>
+            <Text style={styles.signt2} onPress={()=>navigation.navigate("Sign In")}>Sudah memiliki akun? Masuk</Text>
         </View>
         
       </ScrollView>

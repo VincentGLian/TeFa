@@ -77,30 +77,25 @@ export default StyleSheet.create({
     fontSize: 30,
   },
 
-  r1: {
-    marginLeft: 40,
-    width: 23,
-    height: 23,
-    marginTop: 9,
-  },
-
-  r2: {
-    width: 23,
-    height: 23,
-    marginTop: 9,
-  },
-
-  r3: {
-    marginRight: 8,
-    width: 23,
-    height: 23,
-    marginTop: 9,
-  },
-
   rt: {
     fontWeight: '900',
     fontSize: 18,
     marginTop: 8,
+  },
+
+  re: {
+    marginVertical: 5, 
+    marginStart: 25, 
+    marginEnd: 5},
+
+  v1: {
+    backgroundColor: '#304B3B',
+    marginTop: 10,
+  },
+
+  v2: {
+    flexDirection: 'row',
+    margin: 25,
   },
 
   imtk: {
@@ -194,6 +189,16 @@ export default StyleSheet.create({
     marginBottom: 10,
     fontWeight: '500',
     fontSize: 15,
+  },
+
+  v3: {
+    backgroundColor: 'white',
+    marginTop: 2,
+  },
+
+  vt: {
+    margin: 20,
+    marginTop: 10,
   },
 
   bot: {
