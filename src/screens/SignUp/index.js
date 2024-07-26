@@ -72,7 +72,7 @@ const SignUp = () => {
               onPress={() => setCheck1(!check1)}
             />
             
-            <TouchableOpacity style={styles.signb}>
+            <TouchableOpacity style={styles.signb} onPress={()=>navigation.navigate("BotTab")}>
                 <Text style={styles.signt1}>Sign Up</Text>
             </TouchableOpacity>
             <Text style={styles.signt2} onPress={()=>navigation.navigate("Sign In")}>Sudah memiliki akun? Masuk</Text>

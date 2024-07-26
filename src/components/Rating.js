@@ -5,7 +5,6 @@ export const Example = ({tintColor, imageSize, style, startingValue}) => {
   return (
     <Rating
       type="custom"
-      readonly={true}
       fractions={1}
       startingValue={startingValue}
       ratingColor="#304B3B"

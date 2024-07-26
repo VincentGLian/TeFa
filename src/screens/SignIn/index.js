@@ -10,8 +10,7 @@ const SignIn = () => {
   const [text1, onChangeText] = React.useState("");
   const [number, onChangeNumber] = React.useState(null);
   const [password, setPassword] = React.useState('');
-  const { passwordVisibility, rightIcon, handlePasswordVisibility } =
-    useTogglePasswordVisibility();
+  const { passwordVisibility, rightIcon, handlePasswordVisibility } = useTogglePasswordVisibility();
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ flex:1 }}>
@@ -32,7 +31,7 @@ const SignIn = () => {
 
             <Text style={styles.forgot}>forgot password?</Text>
 
-            <TouchableOpacity style={styles.loginb}>
+            <TouchableOpacity style={styles.loginb} onPress={()=>navigation.navigate("BotTab")}>
                 <Text style={styles.logint}>Log in</Text>
             </TouchableOpacity>
             <Text style={styles.orl}>or connect using</Text>

@@ -1,14 +1,15 @@
-import SignUp from "./android/src/screens/SignUp";
-import SignIn from "./android/src/screens/SignIn";
-import Detail from "./android/src/screens/Detail";
-import Search from "./android/src/screens/Search";
-import Review from "./android/src/screens/Review";
-import ProfileShop from "./android/src/screens/ProfileShop";
-import ProfileProduct from "./android/src/screens/ProfileProduct";
-import Home from "./android/src/screens/Home";
-import Chat from "./android/src/screens/Chat";
-import Payment from "./android/src/screens/Payment";
-import Account from "./android/src/screens/Account";
+import SignUp from "./src/screens/SignUp";
+import SignIn from "./src/screens/SignIn";
+import Detail from "./src/screens/Detail";
+import Search from "./src/screens/Search";
+import Review from "./src/screens/Review";
+import ProfileShop from "./src/screens/ProfileShop";
+import ProfileProduct from "./src/screens/ProfileProduct";
+import Home from "./src/screens/Home";
+import Chat from "./src/screens/Chat";
+import Payment from "./src/screens/Payment";
+import Account from "./src/screens/Account";
+import Splash from "./src/screens/Splash";
 import { NavigationContainer } from '@react-navigation/native';
 import { navigationRef } from "./RootNavigation";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -60,7 +61,8 @@ function Bot () {
 const App = () => {
   return (
     <NavigationContainer ref={navigationRef}>
-      <Stack.Navigator initialRouteName="BotTab">
+      <Stack.Navigator initialRouteName="Splash">
+        <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }}/>
         <Stack.Screen name="Sign Up" component={SignUp} options={{ headerShown: false }}/>
         <Stack.Screen name="Sign In" component={SignIn} options={{ headerShown: false }}/>
         <Stack.Screen name="Detail" component={Detail} options={{ headerShown: false }}/>

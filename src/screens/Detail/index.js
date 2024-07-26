@@ -4,20 +4,20 @@ import { CircleButton } from '../../components/Button'
 import { assets } from '../../assets'
 import styles from './styles'
 import { Example } from '../../components/Rating'
-import { useNavigation } from '@react-navigation/native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Feather from 'react-native-vector-icons/Feather'
 
-const Detail = () => {
-    const navigation = useNavigation();
+const Detail = ({route, navigation}) => {
+    const datadetail = route.params.data;
+    
   return (
     <SafeAreaView style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
 
         <View style={{ flex:1 }}>
-            <ImageBackground source={assets.item1} style={{ height:450 }}>
+            <ImageBackground source={datadetail.image} style={{ height:450 }}>
                 <CircleButton imgUrl={assets.back} left={25} top={30} handlePress={() => navigation.goBack()}/>
-                <TouchableOpacity style={styles.cartb}>
+                <TouchableOpacity style={styles.cartb} onPress={()=>navigation.navigate("Payment")}>
                     <Feather name='shopping-cart' size={25} style={{ alignSelf:'center' }}/>
                     <Text style={styles.cartt}>Cart: 2</Text>
                 </TouchableOpacity>
@@ -26,15 +26,15 @@ const Detail = () => {
                 </View>
             </ImageBackground>
             <View style={styles.title}>
-                <Text style={styles.titlet}>Lorem ipsum dolor sit amet consectetur elit</Text>
+                <Text style={styles.titlet}>{datadetail.name}</Text>
                 <TouchableOpacity style={styles.titleb}>
                     <Text style={{ alignSelf:'center' }}>Pre Order</Text>
                     <Feather name='clock' size={17} style={{ alignSelf:'center' }}/>
                 </TouchableOpacity>
             </View>
             <View style={styles.cr}>
-                <Text style={styles.c1}>$20.50</Text>
-                <Text style={styles.c2}>$20.50</Text>
+                <Text style={styles.c1}>{datadetail.price}</Text>
+                <Text style={styles.c2}>{datadetail.price}</Text>
                 <Example tintColor={'#E9E9E9'} imageSize={28} style={styles.re} startingValue={4.9}/>
                 <Text style={styles.rt} onPress={()=>navigation.navigate("Review")}>4.9/5</Text>
             </View>
@@ -42,7 +42,10 @@ const Detail = () => {
 
         <View style={styles.v1}>
             <View style={styles.v2}>
-                <Image source={assets.toko} style={styles.imtk} />
+                <TouchableOpacity onPress={()=>navigation.navigate("Profile Shop")}>
+                    <Image source={assets.toko} style={styles.imtk} />
+                </TouchableOpacity>
+                
                 <View style={{ marginLeft:20 }}>
                     <Text style={styles.imt}>fitrah shop</Text>
                     <View style={{ flexDirection:'row' }}>

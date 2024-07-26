@@ -56,7 +56,7 @@ class ProfileHeader1 extends React.Component {
             </View>
           </ImageBackground>
           <View style={{ flexDirection:'row', width:'100%', height:60, backgroundColor:'#304B3B' }}>
-              <TouchableOpacity style={{ width:'50%', alignItems:'center', justifyContent:'center' }} onPress={()=>navigation.navigate("ProfileShop")}>
+              <TouchableOpacity style={{ width:'50%', alignItems:'center', justifyContent:'center' }} onPress={()=>navigation.navigate("Profile Shop")}>
                 <Text style={{ color:'white', fontSize:16, fontWeight:'800' }}>Shop</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{ width:'50%', alignItems:'center', justifyContent:'center', borderBottomWidth:2, borderBottomColor:'#FDDE67' }}>

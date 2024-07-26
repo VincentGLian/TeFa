@@ -58,7 +58,7 @@ class ProfileHeader extends React.Component {
               <TouchableOpacity style={{ width:'50%', alignItems:'center', justifyContent:'center', borderBottomWidth:2, borderBottomColor:'#FDDE67' }}>
                 <Text style={{ color:'#FDDE67', fontSize:16, fontWeight:'800' }}>Shop</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={{ width:'50%', alignItems:'center', justifyContent:'center' }} onPress={()=>navigation.navigate("ProfileProduct")}>
+              <TouchableOpacity style={{ width:'50%', alignItems:'center', justifyContent:'center' }} onPress={()=>navigation.navigate("Profile Product")}>
                 <Text style={{ color:'white', fontSize:16, fontWeight:'800' }}>Product</Text>
               </TouchableOpacity>
           </View>

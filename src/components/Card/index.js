@@ -6,13 +6,18 @@ import Feather from 'react-native-vector-icons/Feather'
 
 const CardV = ({data}) => {
     const navigation = useNavigation();
+    
   return (
     <View style={{ 
         borderRadius:SIZES.font,
         marginBottom:0,
         margin:SIZES.base,
-        width:"45%",
+        width:"40%",
      }}>
+        <TouchableOpacity onPress={()=>{navigation.navigate("Detail", {data});
+        }}>
+
+            {console.log(data)}
         <View style={{ width:"100%", height:230 }}>
             <Image 
                 source={data.image}
@@ -25,6 +30,8 @@ const CardV = ({data}) => {
             />
         </View>
         <SubInfo />
+
+       
         <View style={{ width:"100%", padding:SIZES.font, marginTop:20, flexDirection:'row', justifyContent:'space-between', alignItems:'center' }}>
             <CardTitle 
                 title={data.name} 
@@ -35,10 +42,11 @@ const CardV = ({data}) => {
                 borderRadius: 3,
                 justifyContent: 'center',
                 height: 30,
-                width: 35,}} onPress={()=>navigation.navigate("Detail", {data})}>
+                width: 35,}} onPress={()=>navigation.navigate("Payment", {data})}>
                 <Feather name='shopping-cart' size={25} style={{ alignSelf:'center' }}/>
             </TouchableOpacity>
         </View>
+        </TouchableOpacity>
     </View>
   )
 }

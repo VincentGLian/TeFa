@@ -15,7 +15,7 @@ const Home = () => {
           keyExtractor={item => item.id}
           numColumns={2}
           showsVerticalScrollIndicator={false}
-          style={{alignSelf: 'center'}}
+          columnWrapperStyle={{ justifyContent:'space-evenly' }}
         />
       </View>
     </SafeAreaView>
